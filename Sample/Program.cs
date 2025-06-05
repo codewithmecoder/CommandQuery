@@ -26,13 +26,20 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IEmailService, EmailService>();
 builder.Services.AddTransient<ISmsService, SmsService>();
-builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(LoggingPipelineBehavior<,>));
-builder.Services.AddScoped(typeof(IRequestPreProcessor<>), typeof(GenericRequestPreProcessor<>));
-builder.Services.AddScoped(typeof(IRequestPostProcessor<,>), typeof(GenericRequestPostProcessor<,>));
-builder.Services.AddScoped(typeof(IRequestPostProcessor<>), typeof(GenericRequestPostProcessor<>));
 
 // Add mediator with the assembly containing handlers
-builder.Services.AddCommandQuery(typeof(Program).Assembly);
+builder.Services.AddCommandQuery(cq =>
+{
+    cq.RegisterAssembly(typeof(Program).Assembly);
+    //cq.NotificationPublisher = new MultipleNotificationPublisher();
+    //cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
+
+    cq.AddBehavior(typeof(LoggingPipelineBehavior<,>));
+    cq.AddBehavior(typeof(GenericRequestPreProcessor<>));
+    cq.AddBehavior(typeof(GenericRequestPostProcessor<,>));
+    cq.AddBehavior(typeof(GenericRequestPostProcessor<>));
+});
+
 
 var app = builder.Build();
 
@@ -49,4 +56,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
