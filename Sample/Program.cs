@@ -1,6 +1,4 @@
 using CommandQuery;
-using CommandQuery.PostRequest;
-using CommandQuery.PreRequest;
 using Sample;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,9 +33,8 @@ builder.Services.AddCommandQuery(cq =>
     //cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
 
     cq.AddBehavior(typeof(LoggingPipelineBehavior<,>));
-    cq.AddBehavior(typeof(GenericRequestPreProcessor<>));
-    cq.AddBehavior(typeof(GenericRequestPostProcessor<,>));
-    cq.AddBehavior(typeof(GenericRequestPostProcessor<>));
+    cq.AddRequestPreProcessor(typeof(GenericRequestPreProcessor<>));
+    cq.AddRequestPostProcessor(typeof(GenericRequestPostProcessor<,>));
 });
 
 

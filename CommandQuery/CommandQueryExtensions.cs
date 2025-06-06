@@ -31,76 +31,45 @@ public static class CommandQueryExtensions
 
         return services;
     }
-
-
-    private static void AddRequiredServices(IServiceCollection services, CommandQueryConfig commandQueryConfig)
+    public static void AddRequiredServices(IServiceCollection services, CommandQueryConfig configuration)
     {
         services.AddScoped<ICommandQuery, CommandQuery>();
-        services.Scan(scan => scan
-            .FromAssemblies(commandQueryConfig.AssembliesToRegister)
 
-            // Register IRequestHandler<TRequest, TResponse>
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
+        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));
+
+        if (configuration.RequestPreProcessorsToRegister.Count > 0)
+        {
+            services.TryAddEnumerable(configuration.RequestPreProcessorsToRegister);
+        }
+
+        if (configuration.RequestPostProcessorsToRegister.Count > 0)
+        {
+            services.TryAddEnumerable(configuration.RequestPostProcessorsToRegister);
+        }
+
+        foreach (var serviceDescriptor in configuration.BehaviorsToRegister)
+        {
+            services.TryAddEnumerable(serviceDescriptor);
+        }
+
+        var notificationPublisherServiceDescriptor = configuration.NotificationPublisherType != null
+            ? new ServiceDescriptor(typeof(INotificationPublisher), configuration.NotificationPublisherType, configuration.Lifetime)
+            : new ServiceDescriptor(typeof(INotificationPublisher), configuration.NotificationPublisher);
+
+        services.TryAdd(notificationPublisherServiceDescriptor);
+
+        services.Scan(scan => scan
+            .FromAssemblies(configuration.AssembliesToRegister)
             .AddClasses(classes => classes.AssignableTo(typeof(IRequestHandler<,>)))
-            .AsImplementedInterfaces()
-            .WithTransientLifetime()
-
-            // Register IRequestHandler<TRequest>
+                .AsImplementedInterfaces()
+                .WithLifetime(configuration.Lifetime)
             .AddClasses(classes => classes.AssignableTo(typeof(IRequestHandler<>)))
-            .AsImplementedInterfaces()
-            .WithTransientLifetime()
+                .AsImplementedInterfaces()
+                .WithLifetime(configuration.Lifetime)
+            .AddClasses(classes => classes.AssignableTo(typeof(INotificationHandler<>)))
+                .AsImplementedInterfaces()
+                .WithLifetime(configuration.Lifetime)
         );
-
-        services.Scan(scan => scan
-            .FromAssemblies(commandQueryConfig.AssembliesToRegister)
-            .AddClasses(classes => classes
-                .Where(type => commandQueryConfig.NotificationPublisherType != null &&
-                               type == commandQueryConfig.NotificationPublisherType))
-            .As<INotificationPublisher>()
-            .WithTransientLifetime());
-
-        // Handle factory instance separately if needed
-        if (commandQueryConfig is { NotificationPublisher: not null, NotificationPublisherType: null })
-        {
-            services.TryAdd(new ServiceDescriptor(typeof(INotificationPublisher), commandQueryConfig.NotificationPublisher));
-        }
-
-        // Register pre-processors
-        if (commandQueryConfig.RequestPreProcessorsToRegister.Count > 0)
-        {
-            services.TryAddEnumerable(ServiceDescriptor.Describe(
-                typeof(IPipelineBehavior<,>),
-                typeof(RequestPreProcessorBehavior<,>),
-                ServiceLifetime.Transient));
-
-            services.Scan(scan => scan
-                .FromAssembliesOf(commandQueryConfig.RequestPreProcessorsToRegister.Select(d => d.ImplementationType).ToArray()!)
-                .AddClasses(classes => classes.AssignableTo(typeof(IPipelineBehavior<,>)))
-                .AsImplementedInterfaces()
-                .WithTransientLifetime());
-        }
-
-        // Register post-processors
-        if (commandQueryConfig.RequestPostProcessorsToRegister.Count > 0)
-        {
-            services.TryAddEnumerable(ServiceDescriptor.Describe(
-                typeof(IPipelineBehavior<,>),
-                typeof(RequestPostProcessorBehavior<,>),
-                ServiceLifetime.Transient));
-
-            services
-                .Scan(scan => scan
-                    .FromAssembliesOf(commandQueryConfig.RequestPostProcessorsToRegister.Select(d => d.ImplementationType).ToArray()!)
-                    .AddClasses(classes => classes.AssignableTo(typeof(IPipelineBehavior<,>)))
-                    .AsImplementedInterfaces()
-                    .WithTransientLifetime());
-        }
-
-        // Register pipeline behaviors
-        services
-            .Scan(scan => scan
-                .FromAssembliesOf(commandQueryConfig.BehaviorsToRegister.Select(d => d.ImplementationType).ToArray()!)
-                .AddClasses(classes => classes.AssignableTo(typeof(IPipelineBehavior<,>)))
-                .AsImplementedInterfaces()
-                .WithTransientLifetime());
     }
 }

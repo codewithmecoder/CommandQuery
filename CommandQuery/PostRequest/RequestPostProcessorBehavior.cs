@@ -16,18 +16,3 @@ public class RequestPostProcessorBehavior<TRequest, TResponse>(IEnumerable<IRequ
         return response;
     }
 }
-
-public class RequestPostProcessorBehavior<TRequest>(IEnumerable<IRequestPostProcessor<TRequest>> postProcessors)
-    : IPipelineBehavior<TRequest>
-    where TRequest : notnull
-{
-    public async Task Handle(TRequest request, RequestHandlerDelegate next, CancellationToken cancellationToken)
-    {
-        await next(cancellationToken).ConfigureAwait(false);
-
-        foreach (var processor in postProcessors)
-        {
-            await processor.Process(request, cancellationToken).ConfigureAwait(false);
-        }
-    }
-}
