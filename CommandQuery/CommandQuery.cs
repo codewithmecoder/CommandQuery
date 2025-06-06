@@ -4,6 +4,9 @@ using System.Collections.Concurrent;
 
 namespace CommandQuery;
 
+/// <summary>
+/// CommandQuery implementation for sending commands, queries, and notifications.
+/// </summary>
 public class CommandQuery : ICommandQuery
 {
     private readonly IServiceProvider _serviceProvider;
@@ -30,6 +33,14 @@ public class CommandQuery : ICommandQuery
         _publisher = publisher;
     }
 
+    /// <summary>
+    /// Send a request and get a response.
+    /// </summary>
+    /// <typeparam name="TResponse"></typeparam>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public async Task<TResponse> Send<TResponse>(IRequest<TResponse> request, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(request);
@@ -44,6 +55,14 @@ public class CommandQuery : ICommandQuery
         return await handler.Handle(request, _serviceProvider, cancellationToken);
     }
 
+    /// <summary>
+    /// Send a request without expecting a response.
+    /// </summary>
+    /// <typeparam name="TRequest"></typeparam>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public Task Send<TRequest>(TRequest request, CancellationToken cancellationToken = default) where TRequest : IRequest
     {
         ArgumentNullException.ThrowIfNull(request);
@@ -58,6 +77,14 @@ public class CommandQuery : ICommandQuery
         return handler.Handle(request, _serviceProvider, cancellationToken);
     }
 
+    /// <summary>
+    /// Push a notification to all registered handlers.
+    /// </summary>
+    /// <typeparam name="TNotification"></typeparam>
+    /// <param name="notification"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentNullException"></exception>
     public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default) where TNotification : INotification
     {
         if (notification == null)

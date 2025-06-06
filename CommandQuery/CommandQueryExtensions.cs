@@ -7,9 +7,17 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace CommandQuery;
 
+/// <summary>
+/// Service extensions for CommandQuery library.
+/// </summary>
 public static class CommandQueryExtensions
 {
-
+    /// <summary>
+    /// Add CommandQuery services to the service collection with default configuration.
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
     public static IServiceCollection AddCommandQuery(this IServiceCollection services, Action<CommandQueryConfig> configuration)
     {
         var serviceConfig = new CommandQueryConfig();
@@ -19,6 +27,13 @@ public static class CommandQueryExtensions
         return services.AddCommandQuery(serviceConfig);
     }
 
+    /// <summary>
+    /// Add CommandQuery services to the service collection with specified configuration.
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
+    /// <returns></returns>
+    /// <exception cref="ArgumentException"></exception>
     public static IServiceCollection AddCommandQuery(this IServiceCollection services,
         CommandQueryConfig configuration)
     {
@@ -31,6 +46,12 @@ public static class CommandQueryExtensions
 
         return services;
     }
+
+    /// <summary>
+    /// Add required services to the service collection based on the provided configuration.
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configuration"></param>
     public static void AddRequiredServices(IServiceCollection services, CommandQueryConfig configuration)
     {
         services.AddScoped<ICommandQuery, CommandQuery>();

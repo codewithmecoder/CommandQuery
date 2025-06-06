@@ -10,6 +10,22 @@
     <Copyright>Copyright Ros Sokcheanith</Copyright>
     <PackageTags>mediator;request;response;queries;commands;notifications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\CommandQuery.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageIcon>gradient_128x128.png</PackageIcon>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <PackageLicenseExpression>MIT License</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>BAS24.Libs</Title>
+    <PackageProjectUrl>https://github.com/codewithmecoder/CommandQuery</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/codewithmecoder/CommandQuery</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
