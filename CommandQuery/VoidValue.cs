@@ -90,4 +90,48 @@ public readonly struct VoidValue : IEquatable<VoidValue>, IComparable<VoidValue>
     /// </summary>
     /// <returns>A <see cref="System.String" /> that represents this instance.</returns>
     public override string ToString() => "()";
+
+    /// <summary>
+    /// returns a <see cref="System.String" /> that represents this instance.
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator <(VoidValue left, VoidValue right)
+    {
+        return left.CompareTo(right) < 0;
+    }
+
+    /// <summary>
+    /// Returns a <see cref="System.String" /> that represents this instance.
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator <=(VoidValue left, VoidValue right)
+    {
+        return left.CompareTo(right) <= 0;
+    }
+
+    /// <summary>
+    /// Returns a <see cref="System.String" /> that represents this instance.
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator >(VoidValue left, VoidValue right)
+    {
+        return left.CompareTo(right) > 0;
+    }
+
+    /// <summary>
+    /// Returns a <see cref="System.String" /> that represents this instance.
+    /// </summary>
+    /// <param name="left"></param>
+    /// <param name="right"></param>
+    /// <returns></returns>
+    public static bool operator >=(VoidValue left, VoidValue right)
+    {
+        return left.CompareTo(right) >= 0;
+    }
 }

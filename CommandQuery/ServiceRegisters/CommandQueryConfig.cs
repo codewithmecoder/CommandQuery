@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CommandQuery.ServiceRegisters;
 
+/// <summary>
+/// Configuration for CommandQuery services registration.
+/// </summary>
 public class CommandQueryConfig
 {
     /// <summary>
@@ -53,6 +56,13 @@ public class CommandQueryConfig
         return this;
     }
 
+    /// <summary>
+    /// Add a behavior to the pipeline.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="serviceLifetime"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public CommandQueryConfig AddBehavior(Type type, ServiceLifetime serviceLifetime = ServiceLifetime.Transient)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -71,7 +81,13 @@ public class CommandQueryConfig
         return this;
     }
 
-
+    /// <summary>
+    /// Add a request pre-processor to the pipeline.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="lifetime"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public CommandQueryConfig AddRequestPreProcessor(Type type, ServiceLifetime lifetime = ServiceLifetime.Transient)
     {
         ArgumentNullException.ThrowIfNull(type);
@@ -102,7 +118,13 @@ public class CommandQueryConfig
         return this;
     }
 
-
+    /// <summary>
+    /// Add a request post-processor to the pipeline.
+    /// </summary>
+    /// <param name="type"></param>
+    /// <param name="lifetime"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     public CommandQueryConfig AddRequestPostProcessor(Type type, ServiceLifetime lifetime = ServiceLifetime.Transient)
     {
         ArgumentNullException.ThrowIfNull(type);

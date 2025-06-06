@@ -13,9 +13,9 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\CommandQuery.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageIcon>gradient_128x128.png</PackageIcon>
+    <PackageIcon>command_query_log.png</PackageIcon>
     <MinVerTagPrefix>v</MinVerTagPrefix>
-    <PackageLicenseExpression>MIT License</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -27,6 +27,11 @@
     <PackageProjectUrl>https://github.com/codewithmecoder/CommandQuery</PackageProjectUrl>
     <RepositoryUrl>https://github.com/codewithmecoder/CommandQuery</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="command_query_log.png" Pack="true" PackagePath="" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.5" />

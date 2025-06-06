@@ -1,5 +1,9 @@
 ﻿namespace CommandQuery.RequestException;
 
+/// <summary>
+/// RequestExceptionHandlerState is used to manage the state of exception handling in the request pipeline.
+/// </summary>
+/// <typeparam name="TResponse"></typeparam>
 public class RequestExceptionHandlerState<TResponse>
 {
     /// <summary>

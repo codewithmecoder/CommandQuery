@@ -1,5 +1,11 @@
 ﻿namespace CommandQuery.RequestException;
 
+/// <summary>
+/// IRequestExceptionHandler interface for handling exceptions thrown by request handlers.
+/// </summary>
+/// <typeparam name="TRequest"></typeparam>
+/// <typeparam name="TResponse"></typeparam>
+/// <typeparam name="TException"></typeparam>
 public interface IRequestExceptionHandler<in TRequest, TResponse, in TException>
     where TRequest : notnull
     where TException : Exception

@@ -87,10 +87,7 @@ public class CommandQuery : ICommandQuery
     /// <exception cref="ArgumentNullException"></exception>
     public Task Publish<TNotification>(TNotification notification, CancellationToken cancellationToken = default) where TNotification : INotification
     {
-        if (notification == null)
-        {
-            throw new ArgumentNullException(nameof(notification));
-        }
+        ArgumentNullException.ThrowIfNull(notification);
 
         return PublishNotification(notification, cancellationToken);
     }
