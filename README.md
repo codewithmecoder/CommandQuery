@@ -38,7 +38,7 @@ This also registers open generic implementations for:
 To register behaviors, pre/post processors:
 
 ```csharp
-services.AddMediatR(cfg => {
+services.AddCommandQuery(cfg => {
     cq.RegisterAssembly(typeof(Program).Assembly);
     //cq.NotificationPublisher = new MultipleNotificationPublisher();
     //cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
