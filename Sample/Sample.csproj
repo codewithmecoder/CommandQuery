@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommandQuery\CommandQuery.csproj" />
+    <ProjectReference Include="..\CommandQuery\Bas24.CommandQuery.csproj" />
   </ItemGroup>
 
 </Project>

@@ -24,8 +24,8 @@
     <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IsPackable>true</IsPackable>
-    <Title>CommandQuery</Title>
-    <PackageId>CommandQuery</PackageId>
+    <Title>Bas24.CommandQuery</Title>
+    <PackageId>Bas24.CommandQuery</PackageId>
     <PackageProjectUrl>https://github.com/codewithmecoder/CommandQuery</PackageProjectUrl>
     <RepositoryUrl>https://github.com/codewithmecoder/CommandQuery</RepositoryUrl>
   </PropertyGroup>

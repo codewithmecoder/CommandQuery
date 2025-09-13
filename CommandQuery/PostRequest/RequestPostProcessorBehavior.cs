@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.PostRequest;
+﻿namespace Bas24.CommandQuery.PostRequest;
 
 /// <summary>
 /// RequestPostProcessorBehavior is a pipeline behavior that processes requests after they have been handled.

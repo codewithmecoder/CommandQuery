@@ -1,8 +1,8 @@
-﻿using CommandQuery.Notifications;
-using CommandQuery.Wrappers;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
+using Bas24.CommandQuery.Notifications;
+using Bas24.CommandQuery.Wrappers;
 
-namespace CommandQuery;
+namespace Bas24.CommandQuery;
 
 /// <summary>
 /// CommandQuery implementation for sending commands, queries, and notifications.

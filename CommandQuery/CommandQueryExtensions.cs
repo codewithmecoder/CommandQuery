@@ -1,11 +1,11 @@
-﻿using CommandQuery.Notifications;
-using CommandQuery.PostRequest;
-using CommandQuery.PreRequest;
-using CommandQuery.ServiceRegisters;
+﻿using Bas24.CommandQuery.Notifications;
+using Bas24.CommandQuery.PostRequest;
+using Bas24.CommandQuery.PreRequest;
+using Bas24.CommandQuery.ServiceRegisters;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
-namespace CommandQuery;
+namespace Bas24.CommandQuery;
 
 /// <summary>
 /// Service extensions for CommandQuery library.
@@ -54,7 +54,7 @@ public static class CommandQueryExtensions
     /// <param name="configuration"></param>
     public static void AddRequiredServices(IServiceCollection services, CommandQueryConfig configuration)
     {
-        services.AddScoped<ICommandQuery, CommandQuery>();
+        services.AddScoped<ICommandQuery, Bas24.CommandQuery.CommandQuery>();
 
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));

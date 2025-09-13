@@ -5,12 +5,13 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{BB773DDC-463B-47E1-A365-061DD3D066D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandQuery", "CommandQuery\CommandQuery.csproj", "{61D87402-246B-46EF-9006-FFDDBCD88DC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bas24.CommandQuery", "CommandQuery\Bas24.CommandQuery.csproj", "{61D87402-246B-46EF-9006-FFDDBCD88DC1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		LICENSE = LICENSE
+		need - sample.md = need - sample.md
 		need.md = need.md
 		README.md = README.md
 	EndProjectSection

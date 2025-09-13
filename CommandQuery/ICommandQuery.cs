@@ -1,6 +1,6 @@
-﻿using CommandQuery.Notifications;
+﻿using Bas24.CommandQuery.Notifications;
 
-namespace CommandQuery;
+namespace Bas24.CommandQuery;
 
 /// <summary>
 /// CommandQuery interface for sending commands, queries, and notifications.

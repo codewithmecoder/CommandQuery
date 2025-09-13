@@ -1,4 +1,4 @@
-﻿using CommandQuery;
+﻿using Bas24.CommandQuery;
 using FluentValidation;
 
 namespace Sample;

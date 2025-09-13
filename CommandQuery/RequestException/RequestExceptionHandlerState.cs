@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.RequestException;
+﻿namespace Bas24.CommandQuery.RequestException;
 
 /// <summary>
 /// RequestExceptionHandlerState is used to manage the state of exception handling in the request pipeline.

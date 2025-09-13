@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.Notifications;
+﻿namespace Bas24.CommandQuery.Notifications;
 
 /// <summary>
 /// NotificationHandlerExecutor is a record that encapsulates the handler instance and its callback for executing notifications.

@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.Notifications;
+﻿namespace Bas24.CommandQuery.Notifications;
 
 /// <summary>
 /// 

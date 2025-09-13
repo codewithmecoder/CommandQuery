@@ -1,4 +1,4 @@
-using CommandQuery;
+using Bas24.CommandQuery;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Sample.Controllers

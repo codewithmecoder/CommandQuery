@@ -1,4 +1,4 @@
-﻿using CommandQuery.PreRequest;
+﻿using Bas24.CommandQuery.PreRequest;
 
 namespace Sample;
 

@@ -1,7 +1,7 @@
-﻿using CommandQuery.Notifications;
+﻿using Bas24.CommandQuery.Notifications;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandQuery.Wrappers;
+namespace Bas24.CommandQuery.Wrappers;
 
 /// <summary>
 /// Notification handler wrapper base class.

@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.PreRequest;
+﻿namespace Bas24.CommandQuery.PreRequest;
 
 /// <summary>
 /// RequestPreProcessorBehavior is a pipeline behavior that processes requests before they are handled.

@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.PreRequest;
+﻿namespace Bas24.CommandQuery.PreRequest;
 
 /// <summary>
 /// IRequestPreProcessor interface for processing requests before they are handled.

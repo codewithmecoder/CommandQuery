@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
-using CommandQuery.Notifications;
-using CommandQuery.PostRequest;
-using CommandQuery.PreRequest;
+using Bas24.CommandQuery.Notifications;
+using Bas24.CommandQuery.PostRequest;
+using Bas24.CommandQuery.PreRequest;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandQuery.ServiceRegisters;
+namespace Bas24.CommandQuery.ServiceRegisters;
 
 /// <summary>
 /// Configuration for CommandQuery services registration.

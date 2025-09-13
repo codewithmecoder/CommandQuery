@@ -1,5 +1,5 @@
-﻿using CommandQuery;
-using System.Text.Json;
+﻿using System.Text.Json;
+using Bas24.CommandQuery;
 
 namespace Sample;
 

@@ -1,4 +1,4 @@
-﻿using CommandQuery.Notifications;
+﻿using Bas24.CommandQuery.Notifications;
 
 namespace Sample;
 

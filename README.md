@@ -1,5 +1,5 @@
 # CommandQuery
-CommandQuery is a Mediator CQRS implementation.
+CommandQuery is a CQRS implementation.
 
 Supports request/response, commands, queries, notifications and events, synchronous and async with intelligent dispatching via C# generic variance.
 
@@ -10,13 +10,13 @@ Examples in this [Project](https://github.com/codewithmecoder/CommandQuery/tree/
 You should install [CommandQuery with NuGet](https://github.com/codewithmecoder/CommandQuery/pkgs/nuget/CommandQuery)
 
 ```SHELL
-Install-Package CommandQuery
+Install-Package Bas24.CommandQuery
 ```
 
 Or via the .NET Core command line interface:
 
 ```SHELL
-dotnet add package CommandQuery
+dotnet add package Bas24.CommandQuery
 ```
 ### Registering with assembly
 

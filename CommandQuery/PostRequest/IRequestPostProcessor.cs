@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.PostRequest;
+﻿namespace Bas24.CommandQuery.PostRequest;
 
 /// <summary>
 /// IRequestPostProcessor interface for processing requests after they have been handled.

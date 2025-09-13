@@ -1,5 +1,5 @@
-using CommandQuery;
-using CommandQuery.Notifications;
+using Bas24.CommandQuery;
+using Bas24.CommandQuery.Notifications;
 using Sample;
 
 var builder = WebApplication.CreateBuilder(args);

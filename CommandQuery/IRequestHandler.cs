@@ -1,4 +1,4 @@
-﻿namespace CommandQuery;
+﻿namespace Bas24.CommandQuery;
 
 /// <summary>
 /// IRequest interface for defining a request in the CommandQuery framework.

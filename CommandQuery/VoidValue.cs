@@ -1,4 +1,4 @@
-﻿namespace CommandQuery;
+﻿namespace Bas24.CommandQuery;
 
 /// <summary>
 /// Represents a void type, since <see cref="System.Void"/> is not a valid return type in C#.

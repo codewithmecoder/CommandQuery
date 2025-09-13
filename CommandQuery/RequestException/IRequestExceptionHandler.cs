@@ -1,4 +1,4 @@
-﻿namespace CommandQuery.RequestException;
+﻿namespace Bas24.CommandQuery.RequestException;
 
 /// <summary>
 /// IRequestExceptionHandler interface for handling exceptions thrown by request handlers.

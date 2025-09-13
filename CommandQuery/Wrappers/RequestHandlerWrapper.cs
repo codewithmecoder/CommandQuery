@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace CommandQuery.Wrappers;
+namespace Bas24.CommandQuery.Wrappers;
 
 /// <summary>
 /// Request handler base class for handling requests in CommandQuery framework.

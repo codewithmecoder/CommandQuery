@@ -1,4 +1,4 @@
-﻿namespace CommandQuery;
+﻿namespace Bas24.CommandQuery;
 
 /// <summary>
 /// Represents a delegate that handles a request and returns a response asynchronously.

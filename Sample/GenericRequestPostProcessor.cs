@@ -1,4 +1,4 @@
-﻿using CommandQuery.PostRequest;
+﻿using Bas24.CommandQuery.PostRequest;
 
 namespace Sample;
 
