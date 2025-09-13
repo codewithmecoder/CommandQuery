@@ -11,7 +11,7 @@ public class EmailService(ILogger<EmailService> logger) : IEmailService
 {
     public Task SendWelcomeEmailAsync(Guid notificationUserId, string notificationName)
     {
-        logger.LogDebug("EmailService: Sending welcome email to {notificationName} with ID {notificationUserId}", notificationName, notificationUserId);
+        logger.LogDebug("EmailService: Sending welcome email to {NotificationName} with ID {NotificationUserId}", notificationName, notificationUserId);
         return Task.CompletedTask;
     }
 }
@@ -24,7 +24,7 @@ public class SmsService(ILogger<SmsService> logger) : ISmsService
 {
     public Task SendWelcomeSmsAsync(Guid notificationUserId, string notificationName)
     {
-        logger.LogDebug("SmsService: Sending welcome SMS to {notificationName} with ID {notificationUserId}", notificationName, notificationUserId);
+        logger.LogDebug("SmsService: Sending welcome SMS to {NotificationName} with ID {NotificationUserId}", notificationName, notificationUserId);
         return Task.CompletedTask;
     }
 }

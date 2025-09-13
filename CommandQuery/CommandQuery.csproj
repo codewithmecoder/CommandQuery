@@ -6,9 +6,9 @@
     <Nullable>enable</Nullable>
     <Features>strict</Features>
     <Authors>Ros Sokcheanith</Authors>
-    <Description>Simple, unambitious mediator CQRS implementation in .NET</Description>
+    <Description>Simple, unambitious CQRS implementation in .NET</Description>
     <Copyright>Copyright Ros Sokcheanith</Copyright>
-    <PackageTags>mediator;request;response;queries;commands;notifications</PackageTags>
+    <PackageTags>request;response;queries;commands;notifications</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\CommandQuery.snk</AssemblyOriginatorKeyFile>
@@ -23,7 +23,8 @@
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Title>BAS24.Libs</Title>
+    <Title>CommandQuery</Title>
+    <PackageId>CommandQuery</PackageId>
     <PackageProjectUrl>https://github.com/codewithmecoder/CommandQuery</PackageProjectUrl>
     <RepositoryUrl>https://github.com/codewithmecoder/CommandQuery</RepositoryUrl>
   </PropertyGroup>

@@ -1,4 +1,5 @@
 using CommandQuery;
+using CommandQuery.Notifications;
 using Sample;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,9 +30,9 @@ builder.Services.AddTransient<ISmsService, SmsService>();
 builder.Services.AddCommandQuery(cq =>
 {
     cq.RegisterAssembly(typeof(Program).Assembly);
-    //cq.NotificationPublisher = new MultipleNotificationPublisher();
-    //cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
-
+    cq.NotificationPublisher = new MultipleNotificationPublisher();
+    cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
+    
     cq.AddBehavior(typeof(LoggingPipelineBehavior<,>));
     cq.AddRequestPreProcessor(typeof(GenericRequestPreProcessor<>));
     cq.AddRequestPostProcessor(typeof(GenericRequestPostProcessor<,>));
