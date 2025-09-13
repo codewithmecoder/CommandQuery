@@ -7,7 +7,7 @@ Examples in this [Project](https://github.com/codewithmecoder/CommandQuery/tree/
 
 ### Installing CommandQuery
 
-You should install [CommandQuery with NuGet](https://github.com/codewithmecoder/CommandQuery)
+You should install [CommandQuery with NuGet](https://github.com/codewithmecoder/CommandQuery/pkgs/nuget/CommandQuery)
 
 ```SHELL
 Install-Package CommandQuery
@@ -40,8 +40,8 @@ To register behaviors, pre/post processors:
 ```csharp
 services.AddCommandQuery(cfg => {
     cq.RegisterAssembly(typeof(Program).Assembly);
-    //cq.NotificationPublisher = new MultipleNotificationPublisher();
-    //cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
+    cq.NotificationPublisher = new MultipleNotificationPublisher();
+    cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
 
     cq.AddBehavior(typeof(LoggingPipelineBehavior<,>));
     cq.AddRequestPreProcessor(typeof(GenericRequestPreProcessor<>));
