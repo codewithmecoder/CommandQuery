@@ -3,11 +3,11 @@ CommandQuery is a Mediator CQRS implementation.
 
 Supports request/response, commands, queries, notifications and events, synchronous and async with intelligent dispatching via C# generic variance.
 
-Examples in this[Project](https://github.com/codewithmecoder/CommandQuery/tree/main/Sample).
+Examples in this [Project](https://github.com/codewithmecoder/CommandQuery/tree/main/Sample).
 
 ### Installing CommandQuery
 
-You should install [CommandQuery with NuGet](https://github.com/codewithmecoder/CommandQuery):
+You should install [CommandQuery with NuGet](https://github.com/codewithmecoder/CommandQuery)
 
 ```SHELL
 Install-Package CommandQuery
@@ -38,7 +38,7 @@ This also registers open generic implementations for:
 To register behaviors, pre/post processors:
 
 ```csharp
-services.AddMediatR(cfg => {
+services.AddCommandQuery(cfg => {
     cq.RegisterAssembly(typeof(Program).Assembly);
     //cq.NotificationPublisher = new MultipleNotificationPublisher();
     //cq.NotificationPublisherType = typeof(MultipleNotificationPublisher);
