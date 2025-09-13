@@ -7,7 +7,7 @@ Examples in this [Project](https://github.com/codewithmecoder/CommandQuery/tree/
 
 ### Installing CommandQuery
 
-You should install [CommandQuery with NuGet](https://github.com/codewithmecoder/CommandQuery/pkgs/nuget/CommandQuery)
+You should install [CommandQuery with NuGet](https://www.nuget.org/packages/Bas24.CommandQuery/)
 
 ```SHELL
 Install-Package Bas24.CommandQuery
