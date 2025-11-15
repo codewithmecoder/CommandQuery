@@ -54,7 +54,7 @@ public static class CommandQueryExtensions
     /// <param name="configuration"></param>
     public static void AddRequiredServices(IServiceCollection services, CommandQueryConfig configuration)
     {
-        services.AddScoped<ICommandQuery, Bas24.CommandQuery.CommandQuery>();
+        services.AddScoped<ICommandQuery, CommandQuery>();
 
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPreProcessorBehavior<,>));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPostProcessorBehavior<,>));

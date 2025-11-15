@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Features>strict</Features>
@@ -26,6 +26,7 @@
     <IsPackable>true</IsPackable>
     <Title>Bas24.CommandQuery</Title>
     <PackageId>Bas24.CommandQuery</PackageId>
+	  <Version>1.0.1</Version>
     <PackageProjectUrl>https://github.com/codewithmecoder/CommandQuery</PackageProjectUrl>
     <RepositoryUrl>https://github.com/codewithmecoder/CommandQuery</RepositoryUrl>
   </PropertyGroup>
@@ -36,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
     <PackageReference Include="Scrutor" Version="6.1.0" />
   </ItemGroup>
 
