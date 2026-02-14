@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="LICENSE" />
+    <File Path="need - sample.md" />
+    <File Path="need.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="CommandQuery/Bas24.CommandQuery.csproj" />
+  <Project Path="Sample/Sample.csproj" />
+</Solution>
